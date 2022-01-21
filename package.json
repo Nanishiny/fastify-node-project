@@ -26,5 +26,10 @@
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.4.7",
     "tap": "^15.1.6"
-  }
+  },
+  "eslintIgnore": [
+    "*.test.js",
+    "*.sp"
+  ]
+  
 }
