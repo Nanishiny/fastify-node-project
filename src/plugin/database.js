@@ -2,9 +2,10 @@
 const fp = require('fastify-plugin');
 const pgp = require('pg-promise')();
 const applyMigration = require('./helper/migration');
+const config = require('../config');
 
 const db = async (fastify, option, next) => {
-    const dbConnection = pgp(process.env.POSTGRES_URI);
+    const dbConnection = pgp(config.database_uri);
 
     // register db as decorator to  provide globally
     fastify.decorate('db', dbConnection);
