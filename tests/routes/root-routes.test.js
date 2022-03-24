@@ -2,19 +2,19 @@ const build = require('../../src/app');
 
 let app;
 describe('Root route', () => {
-    beforeEach(()=>{
-        app = build();
-    })
+  beforeEach(() => {
+    app = build();
+  });
 
-afterEach(()=> {
+  afterEach(() => {
     app.close();
-});
+  });
 
-it('should return 200 when root route called', async () => {
+  it('should return 200 when root route called', async () => {
     const res = await app.inject({
-        url: '/',
+      url: '/',
     });
     expect(res.statusCode).toBe(200);
-    expect(res.json()).toStrictEqual({hello: "world"});
-});
+    expect(res.json()).toStrictEqual({ hello: 'world' });
+  });
 });

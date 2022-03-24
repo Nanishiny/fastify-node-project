@@ -17,5 +17,6 @@
     },
     "rules": {
         "linebreak-style": 0
-    }
+    },
+    "ignorePatterns": ["nodes_modules/", "migrations/"]
 }

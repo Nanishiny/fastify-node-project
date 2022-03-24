@@ -1,6 +1,4 @@
 containers:
-  my-container:
-    image: alpine:3.11.3
   build-fastify-env:
     image: node:14.3.0
     volumes:
@@ -57,6 +55,25 @@ tasks:
     run:
       container: build-fastify-env
       command: npm install
+
+  # task for ruinning fastify app
+  test-ci:
+    description: Run test casi in CI mode
+    dependencies:
+      - db-test
+    run:
+      container: build-fastify-env
+      environment:
+        PORT: 8080
+        POSTGRES_URI: postgres://app:password@db-test/db
+      command: npm run test
+
+  # task for ruinning fastify app
+  lint:
+    description: Run lint
+    run:
+      container: build-fastify-env
+      command: npm run lint
 
   # task for running fastify app
   start-server:
