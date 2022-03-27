@@ -55,7 +55,7 @@ tasks:
     description: Install dependencies needed to build fastify app
     run:
       container: build-fastify-env
-      command: npm install
+      command: sudo npm install
 
   # task for test cases
   test-ci:
