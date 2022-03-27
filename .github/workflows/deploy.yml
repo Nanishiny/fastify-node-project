@@ -8,13 +8,13 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Install Fastify Dependencies
-        run: ./batect install-dep
+        run: sudo ./batect install-dep
 
       - name: Run testcase
         run: ./batect test-ci
