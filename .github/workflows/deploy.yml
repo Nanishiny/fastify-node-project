@@ -13,10 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Dependencies
+      - name: Install Fastify Dependencies
         run: ./batect install-dep
 
-      - name: Run Test Cases
+      - name: Run testcase
         run: ./batect test-ci
 
       - name: Perform Linting
