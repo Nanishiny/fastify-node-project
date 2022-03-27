@@ -1,6 +1,7 @@
 containers:
   build-fastify-env:
     image: node:14.3.0
+    options: --user root
     volumes:
       - local: .
         container: /code
