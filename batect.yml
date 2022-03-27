@@ -49,14 +49,14 @@ tasks:
       container: my-container
       command: echo 'Hello world!'
 
-  # task for ruinning fastify app
+  # task for install dependencies
   install-dep:
     description: Install dependencies needed to build fastify app
     run:
       container: build-fastify-env
       command: npm install
 
-  # task for ruinning fastify app
+  # task for test cases
   test-ci:
     description: Run test casi in CI mode
     dependencies:
@@ -68,7 +68,7 @@ tasks:
         POSTGRES_URI: postgres://app:password@db-test/db
       command: npm run test
 
-  # task for ruinning fastify app
+  # task for lint
   lint:
     description: Run lint
     run:
